@@ -1,0 +1,12 @@
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\bin\Debug\net7.0\MOJA.MobileStore.Domain.deps.json
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\bin\Debug\net7.0\MOJA.MobileStore.Domain.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\bin\Debug\net7.0\MOJA.MobileStore.Domain.pdb
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.csproj.AssemblyReference.cache
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.AssemblyInfoInputs.cache
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.AssemblyInfo.cs
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.csproj.CoreCompileInputs.cache
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\refint\MOJA.MobileStore.Domain.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\MOJA.MobileStore.Domain.pdb
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Domain\obj\Debug\net7.0\ref\MOJA.MobileStore.Domain.dll

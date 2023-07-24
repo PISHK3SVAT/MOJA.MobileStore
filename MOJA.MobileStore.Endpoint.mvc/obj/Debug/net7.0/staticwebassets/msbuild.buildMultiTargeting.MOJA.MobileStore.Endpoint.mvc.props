@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MOJA.MobileStore.Endpoint.mvc.props" />
+</Project>

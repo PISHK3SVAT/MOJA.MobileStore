@@ -4,14 +4,14 @@
     "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj": {}
   },
   "projects": {
-    "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj": {
+    "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj",
-        "projectName": "MOJA.MobileStore.Endpoint.mvc",
-        "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj",
+        "projectUniqueName": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj",
+        "projectName": "MOJA.MobileStore.Domain",
+        "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj",
         "packagesPath": "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\",
-        "outputPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\obj\\",
+        "outputPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PISHK3SVAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,74 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj",
+        "projectName": "MOJA.MobileStore.Endpoint.mvc",
+        "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj",
+        "packagesPath": "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\",
+        "outputPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PISHK3SVAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
+                "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
+              },
+              "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\MOJA.MobileStore.Persistence.csproj": {
+                "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\MOJA.MobileStore.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.9, )"
@@ -51,6 +119,10 @@
               "version": "[7.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[7.0.9, )"
             }
@@ -70,6 +142,95 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\MOJA.MobileStore.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\MOJA.MobileStore.Persistence.csproj",
+        "projectName": "MOJA.MobileStore.Persistence",
+        "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\MOJA.MobileStore.Persistence.csproj",
+        "packagesPath": "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\",
+        "outputPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PISHK3SVAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
+                "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

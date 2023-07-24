@@ -1,7 +1,23 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
+using MOJA.MobileStore.Domain.Users;
+using MOJA.MobileStore.Persistence.Contexts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connctionString = builder.Configuration.GetConnectionString("default");
+builder.Services.AddDbContext<IdentityDbContext>(option =>
+{
+    option.UseSqlServer(connctionString);
+});
+
+builder.Services.AddIdentityCore<Person>()
+    .AddEntityFrameworkStores<IdentityDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
