@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
-using MOJA.MobileStore.Domain.Users;
+using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-using MOJA.MobileStore.Domain.Users;
+using MOJA.MobileStore.Domain.Entities.Users;
 
 namespace MOJA.MobileStore.Persistence.Configs.Users
 {
