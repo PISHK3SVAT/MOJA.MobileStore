@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MOJA.MobileStore.Domain.Entities.Users.Admins
 {
-    public class Admin:IdentityUser
+    public class Admin:Person
     {
     }
 }
