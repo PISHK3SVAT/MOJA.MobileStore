@@ -9,6 +9,7 @@ namespace MOJA.MobileStore.Persistence.Configs.Users.Customers
     {
         public void Configure(EntityTypeBuilder<StateOC> builder)
         {
+            builder.ToTable("StateOCs","Customer");
             builder.Property(s => s.Title)
                 .IsRequired()
                 .HasMaxLength(20);

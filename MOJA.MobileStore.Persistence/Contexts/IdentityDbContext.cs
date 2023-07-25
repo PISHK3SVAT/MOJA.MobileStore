@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MOJA.MobileStore.Domain.Entities.Users;
+using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Domain.Entities.Users.Customers;
 using MOJA.MobileStore.Persistence.Configs.Users;
 using MOJA.MobileStore.Persistence.Configs.Users.Customers;
@@ -16,6 +17,7 @@ namespace MOJA.MobileStore.Persistence.Contexts
     public class IdentityDbContext:IdentityDbContext<Person>
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
         :base(options)
         {}

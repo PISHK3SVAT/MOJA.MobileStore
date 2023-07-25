@@ -15,6 +15,7 @@ namespace MOJA.MobileStore.Persistence.Configs.Users.Customers
     {
         public void Configure(EntityTypeBuilder<City> builder)
         {
+            builder.ToTable("Cities","Customer");
             builder.Property(c => c.Title)
                 .IsRequired()
                 .HasMaxLength(20);

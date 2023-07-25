@@ -15,6 +15,7 @@ namespace MOJA.MobileStore.Persistence.Configs.Users.Customers
     {
         public void Configure(EntityTypeBuilder<CustomerAddress> builder)
         {
+            builder.ToTable("Addresses", "Customer");
             builder.Property(ca => ca.Address)
                 .IsRequired();
 
