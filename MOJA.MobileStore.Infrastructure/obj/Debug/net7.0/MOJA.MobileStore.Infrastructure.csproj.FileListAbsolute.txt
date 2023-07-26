@@ -10,3 +10,8 @@ H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\obj\Debug\net7.0\MOJA.M
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\obj\Debug\net7.0\refint\MOJA.MobileStore.Infrastructure.dll
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\obj\Debug\net7.0\MOJA.MobileStore.Infrastructure.pdb
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\obj\Debug\net7.0\ref\MOJA.MobileStore.Infrastructure.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\bin\Debug\net7.0\MOJA.MobileStore.Common.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\bin\Debug\net7.0\MOJA.MobileStore.Domain.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\bin\Debug\net7.0\MOJA.MobileStore.Common.pdb
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\bin\Debug\net7.0\MOJA.MobileStore.Domain.pdb
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Infrastructure\obj\Debug\net7.0\MOJA.MobileStore.Infrastructure.csproj.CopyComplete

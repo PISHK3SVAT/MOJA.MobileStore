@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc
 build_property._RazorSourceGeneratorDebug = 
 
+[H:/Code/MOJA.MobileStore/MOJA.MobileStore.Endpoint.mvc/Views/Account/CreateCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Code/MOJA.MobileStore/MOJA.MobileStore.Endpoint.mvc/Views/Account/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Code/MOJA.MobileStore/MOJA.MobileStore.Endpoint.mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

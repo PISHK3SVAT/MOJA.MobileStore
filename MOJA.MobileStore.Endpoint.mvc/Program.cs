@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using MOJA.MobileStore.Domain.Entities.Users;
+using MOJA.MobileStore.Infrastructure.IdentityConfigs;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.CreatePerson;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 using MOJA.MobileStore.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,10 +16,13 @@ builder.Services.AddDbContext<IdentityDbContext>(option =>
     option.UseSqlServer(connctionString);
 });
 
-builder.Services.AddIdentityCore<Person>()
+builder.Services.AddIdentity<Person,IdentityRole>()
     .AddEntityFrameworkStores<IdentityDbContext>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders()
+    .AddErrorDescriber<CustomeIdentityErrors>();
 
+builder.Services.AddScoped<ICreateCustomerService, CreateCustomerService>();
+builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

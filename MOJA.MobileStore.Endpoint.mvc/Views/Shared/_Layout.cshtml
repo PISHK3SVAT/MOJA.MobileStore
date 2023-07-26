@@ -182,7 +182,7 @@
                         <div class="user-item account">
                             @if(!User.Identity!.IsAuthenticated)
                             {
-                                <a href="#" class="btn-auth">
+                                <a asp-action="CreateCustomer" asp-controller="Account" class="btn-auth">
                                     <i class="fal fa-user-circle"></i>
                                     ورود و عضویت
                                 </a>
