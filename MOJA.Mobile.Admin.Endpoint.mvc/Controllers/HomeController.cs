@@ -1,11 +1,13 @@
 ﻿using System.Diagnostics;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using MOJA.Mobile.Admin.Endpoint.mvc.Models;
 
 namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

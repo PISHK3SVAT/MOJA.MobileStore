@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using MOJA.Mobile.Admin.Endpoint.mvc.Models.Account;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 
 namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
@@ -10,10 +11,13 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
     public class AccountController : Controller
     {
         private ISignInPersonService _signInPersonService;
+        private ISignOutPersonService _signOutPersonService;
 
-        public AccountController(ISignInPersonService signInPersonService)
+        public AccountController(ISignInPersonService signInPersonService,
+            ISignOutPersonService signOutPersonService)
         {
             _signInPersonService = signInPersonService;
+            _signOutPersonService = signOutPersonService;
         }
 
         public IActionResult Index()
@@ -44,6 +48,17 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
                 return View(vm);
             }
             return Redirect(vm.ReturnUrl);
+        }
+
+        public new async Task<IActionResult> SignOut()
+        {
+            await _signOutPersonService.ExecuteAsync();
+            return RedirectToAction("SignIn");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 using MOJA.MobileStore.Persistence.Contexts;
 
@@ -18,9 +19,31 @@ builder.Services.AddDbContext<IdentityDbContext>(option =>
 builder.Services.AddIdentity<Person, IdentityRole>()
     .AddEntityFrameworkStores<IdentityDbContext>()
     .AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>()
     .AddErrorDescriber<CustomeIdentityErrors>();
 
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    //user
+    options.User.RequireUniqueEmail=true;
+
+    //lockout
+    options.Lockout.MaxFailedAccessAttempts= 5;
+    options.Lockout.DefaultLockoutTimeSpan= TimeSpan.FromMinutes(10);
+
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.ExpireTimeSpan= TimeSpan.FromDays(5);
+    options.SlidingExpiration = true;
+
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.LoginPath = "/Account/SignIn";
+    options.LogoutPath = "/Account/SingOut";
+});
 builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
+builder.Services.AddScoped<ISignOutPersonService, SignOutPersonService>();
 
 var app = builder.Build();
 
@@ -37,6 +60,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
