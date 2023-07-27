@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Endpoint.mvc.Models.Account;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.CreatePerson;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 
 namespace MOJA.MobileStore.Endpoint.mvc.Controllers
@@ -14,11 +15,14 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
     {
         private ICreateCustomerService _createPersonService;
         private ISignInPersonService _signInPersonService;
+        private ISignOutPersonService _signOutPersonService;
         public AccountController(ICreateCustomerService createPersonService,
-            ISignInPersonService signInPersonService)
+            ISignInPersonService signInPersonService,
+            ISignOutPersonService signOutPersonService)
         {
             _createPersonService = createPersonService;
             _signInPersonService = signInPersonService;
+            _signOutPersonService = signOutPersonService;
         }
 
         [HttpGet]
@@ -70,6 +74,12 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
                 return View(vm);
             }
             return Redirect(vm.ReturnUrl);
+        }
+
+        public new async Task<IActionResult> SignOut()
+        {
+            await _signOutPersonService.ExecuteAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.CreatePerson;
+using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 using MOJA.MobileStore.Persistence.Contexts;
 
@@ -23,6 +24,7 @@ builder.Services.AddIdentity<Person,IdentityRole>()
 
 builder.Services.AddScoped<ICreateCustomerService, CreateCustomerService>();
 builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
+builder.Services.AddScoped<ISignOutPersonService, SignOutPersonService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
