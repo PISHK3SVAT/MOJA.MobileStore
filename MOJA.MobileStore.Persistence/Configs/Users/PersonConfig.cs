@@ -22,10 +22,10 @@ namespace MOJA.MobileStore.Persistence.Configs.Users
                 .IsRequired()
                 .HasMaxLength(20);
 
-            builder.HasIndex(p => p.NationalCode)
-                .IsUnique();
+            //builder.HasIndex(p => p.NationalCode)
+            //    .IsUnique();
             builder.Property(p => p.NationalCode)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(20)
                 .IsFixedLength();
         }

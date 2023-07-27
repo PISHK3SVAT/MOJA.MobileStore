@@ -40,6 +40,12 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
                 ModelState.AddModelError(string.Empty, result.Message);
                 return View(vm);
             }
+            await _signInPersonService.ExecuteAsync(new RequestSignInPersonDto
+            {
+                Email = vm.Email,
+                IsPersistence = false,
+                Password = vm.Password,
+            });
             return RedirectToAction("Index","Home");
         }
 
