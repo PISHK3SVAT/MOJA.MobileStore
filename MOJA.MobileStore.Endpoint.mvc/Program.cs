@@ -21,6 +21,26 @@ builder.Services.AddIdentity<Person,IdentityRole>()
     .AddEntityFrameworkStores<IdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddErrorDescriber<CustomeIdentityErrors>();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    //user
+    options.User.RequireUniqueEmail = true;
+
+    //lockout
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.ExpireTimeSpan = TimeSpan.FromDays(5);
+    options.SlidingExpiration = true;
+
+    //options.AccessDeniedPath = "/Account/AccessDenied";
+    options.LoginPath = "/Account/SignIn";
+    options.LogoutPath = "/Account/SingOut";
+});
 
 builder.Services.AddScoped<ICreateCustomerService, CreateCustomerService>();
 builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
@@ -39,7 +59,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthorization();
 app.UseAuthorization();
 
 app.MapControllerRoute(

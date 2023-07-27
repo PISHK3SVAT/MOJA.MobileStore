@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -75,7 +76,7 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
             }
             return Redirect(vm.ReturnUrl);
         }
-
+        [Authorize]
         public new async Task<IActionResult> SignOut()
         {
             await _signOutPersonService.ExecuteAsync();
