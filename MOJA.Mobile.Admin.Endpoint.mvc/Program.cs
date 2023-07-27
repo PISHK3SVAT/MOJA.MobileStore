@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using MOJA.MobileStore.Domain.Entities.Users;
+using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
@@ -16,7 +17,7 @@ builder.Services.AddDbContext<IdentityDbContext>(option =>
 {
     option.UseSqlServer(connctionString);
 });
-builder.Services.AddIdentity<Person, IdentityRole>()
+builder.Services.AddIdentity<Admin, IdentityRole>()
     .AddEntityFrameworkStores<IdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddRoles<IdentityRole>()
@@ -42,8 +43,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Account/SignIn";
     options.LogoutPath = "/Account/SingOut";
 });
-builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
-builder.Services.AddScoped<ISignOutPersonService, SignOutPersonService>();
+builder.Services.AddScoped<ISignInPersonService, SignInAdminService>();
+builder.Services.AddScoped<ISignOutPersonService, SignOutAdminService>();
 
 var app = builder.Build();
 
