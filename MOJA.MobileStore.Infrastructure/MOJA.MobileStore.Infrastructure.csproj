@@ -7,16 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Persons\FacadPattern\**" />
+    <EmbeddedResource Remove="Services\Persons\FacadPattern\**" />
+    <None Remove="Services\Persons\FacadPattern\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MOJA.MobileStore.Common\MOJA.MobileStore.Common.csproj" />
     <ProjectReference Include="..\MOJA.MobileStore.Domain\MOJA.MobileStore.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Persons\FacadPattern\" />
   </ItemGroup>
 
 </Project>
