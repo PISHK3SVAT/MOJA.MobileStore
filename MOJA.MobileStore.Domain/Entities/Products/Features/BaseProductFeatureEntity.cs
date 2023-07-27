@@ -10,6 +10,6 @@ namespace MOJA.MobileStore.Domain.Entities.Products.Features
     {
         public TKey Id { get; set; }
         public string Title { get; set; } = "";
-        //public List<Product>? Products { get; set; }
+        public List<Product>? Products { get; set; }
     }
 }
