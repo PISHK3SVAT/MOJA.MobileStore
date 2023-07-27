@@ -17,5 +17,8 @@ namespace MOJA.MobileStore.Domain.Entities.Products
         //Both Admin and Customer can answer questions
         public long OwnerId { get; set; }
         public Person Owner { get; set; } = new Person();
+
+        public long QuestionId { get; set; }
+        public Question Question { get; set; } = new();
     }
 }
