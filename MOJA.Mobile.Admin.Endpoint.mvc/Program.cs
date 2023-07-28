@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+using MOJA.MobileStore.Application.Interfaces.Contexts;
+using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
@@ -14,6 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var connctionString = builder.Configuration.GetConnectionString("default");
+builder.Services.AddDbContext<IAppDbContext,AppDbContext>(options =>
+{
+    options.UseSqlServer(connctionString);
+});
 builder.Services.AddDbContext<IdentityDbContext>(option =>
 {
     option.UseSqlServer(connctionString);
@@ -47,6 +53,9 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<ISignInPersonService, SignInAdminService>();
 builder.Services.AddScoped<ISignOutPersonService, SignOutAdminService>();
 builder.Services.AddScoped<IImageUploadService, ImageUploadService>();
+builder.Services.AddScoped<ICreateProductService, CreateProductService>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

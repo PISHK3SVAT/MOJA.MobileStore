@@ -11,7 +11,7 @@ using MOJA.MobileStore.Domain.Entities.Products;
 
 namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 {
-    internal interface ICreateProductService
+    public interface ICreateProductService
     {
         Task<ResultCreateProductDto> Execute(CreateProductDto dto);
     }
