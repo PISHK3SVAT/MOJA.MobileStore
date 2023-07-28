@@ -25,4 +25,8 @@
     <ProjectReference Include="..\MOJA.MobileStore.Domain\MOJA.MobileStore.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configs\Products\Features\" />
+  </ItemGroup>
+
 </Project>
