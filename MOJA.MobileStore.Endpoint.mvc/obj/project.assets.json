@@ -4321,6 +4321,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "MOJA.MobileStore.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "MOJA.MobileStore.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.9"
+        },
+        "compile": {
+          "bin/placeholder/MOJA.MobileStore.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MOJA.MobileStore.Application.dll": {}
+        }
+      },
       "MOJA.MobileStore.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4363,6 +4377,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "MOJA.MobileStore.Application": "1.0.0",
           "MOJA.MobileStore.Domain": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore": "7.0.9",
@@ -12136,6 +12151,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "MOJA.MobileStore.Application/1.0.0": {
+      "type": "project",
+      "path": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj",
+      "msbuildProject": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj"
     },
     "MOJA.MobileStore.Common/1.0.0": {
       "type": "project",

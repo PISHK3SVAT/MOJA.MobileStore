@@ -1215,6 +1215,20 @@
           }
         }
       },
+      "MOJA.MobileStore.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "MOJA.MobileStore.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.9"
+        },
+        "compile": {
+          "bin/placeholder/MOJA.MobileStore.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MOJA.MobileStore.Application.dll": {}
+        }
+      },
       "MOJA.MobileStore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3639,6 +3653,11 @@
         "version.txt"
       ]
     },
+    "MOJA.MobileStore.Application/1.0.0": {
+      "type": "project",
+      "path": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj",
+      "msbuildProject": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj"
+    },
     "MOJA.MobileStore.Domain/1.0.0": {
       "type": "project",
       "path": "../MOJA.MobileStore.Domain/MOJA.MobileStore.Domain.csproj",
@@ -3647,6 +3666,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "MOJA.MobileStore.Application >= 1.0.0",
       "MOJA.MobileStore.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.9",
       "Microsoft.EntityFrameworkCore >= 7.0.9",
@@ -3683,6 +3703,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Application\\MOJA.MobileStore.Application.csproj": {
+              "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Application\\MOJA.MobileStore.Application.csproj"
+            },
             "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
               "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
             }

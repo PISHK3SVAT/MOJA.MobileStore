@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MOJA.MobileStore.Application\MOJA.MobileStore.Application.csproj" />
     <ProjectReference Include="..\MOJA.MobileStore.Domain\MOJA.MobileStore.Domain.csproj" />
   </ItemGroup>
 
