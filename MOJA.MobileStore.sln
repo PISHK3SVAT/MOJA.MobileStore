@@ -25,7 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOJA.MobileStore.Endpoint.mvc", "MOJA.MobileStore.Endpoint.mvc\MOJA.MobileStore.Endpoint.mvc.csproj", "{0E6C8238-4E32-4F0F-90E9-388F76F9B541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOJA.Mobile.Admin.Endpoint.mvc", "MOJA.Mobile.Admin.Endpoint.mvc\MOJA.Mobile.Admin.Endpoint.mvc.csproj", "{83A83B1E-59E6-402A-8271-8D0A21A3710C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOJA.Mobile.Admin.Endpoint.mvc", "MOJA.Mobile.Admin.Endpoint.mvc\MOJA.Mobile.Admin.Endpoint.mvc.csproj", "{83A83B1E-59E6-402A-8271-8D0A21A3710C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOJA.MobileStore.StaticFile.Endpoint.mvc", "MOJA.MobileStore.StaticFile.Endpoint.mvc\MOJA.MobileStore.StaticFile.Endpoint.mvc.csproj", "{EE512B32-D707-43BB-8473-21749D704B98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{83A83B1E-59E6-402A-8271-8D0A21A3710C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A83B1E-59E6-402A-8271-8D0A21A3710C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A83B1E-59E6-402A-8271-8D0A21A3710C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE512B32-D707-43BB-8473-21749D704B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE512B32-D707-43BB-8473-21749D704B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE512B32-D707-43BB-8473-21749D704B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE512B32-D707-43BB-8473-21749D704B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{548BF3F3-7F13-4C0A-BA31-DB5AFC6421B6} = {4BA96F7F-607C-4801-A454-0BE4D53F2999}
 		{0E6C8238-4E32-4F0F-90E9-388F76F9B541} = {548BF3F3-7F13-4C0A-BA31-DB5AFC6421B6}
 		{83A83B1E-59E6-402A-8271-8D0A21A3710C} = {548BF3F3-7F13-4C0A-BA31-DB5AFC6421B6}
+		{EE512B32-D707-43BB-8473-21749D704B98} = {548BF3F3-7F13-4C0A-BA31-DB5AFC6421B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC99C249-0D56-46D9-94D5-EFEBF6A0D9FB}
