@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MOJA.MobileStore.StaticFile.Endpoint.mvc.Controllers
@@ -7,18 +8,19 @@ namespace MOJA.MobileStore.StaticFile.Endpoint.mvc.Controllers
     [ApiController]
     public class ImageController : ControllerBase
     {
-        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment;
+        private readonly IWebHostEnvironment _environment;
 
-        public ImagesController(IHostingEnvironment hostingEnvironment)
+        public ImageController(IWebHostEnvironment environment)
         {
-            _environment = hostingEnvironment;
+            _environment = environment;
         }
-        public IActionResult Post(string apiKey)
+
+        public IActionResult Post(/*string apiKey*/)
         {
-            if (apiKey != "mysecretkey")
-            {
-                return BadRequest();
-            }
+            //if (apiKey != "mysecretkey")
+            //{
+            //    return BadRequest();
+            //}
             try
             {
                 var files = Request.Form.Files;

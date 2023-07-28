@@ -72,6 +72,10 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
                 Weight=dto.Weight,
                 Width=dto.Width,
                 Wifi=dto.Wifi,
+                Images=dto.Images
+                    .Select(i=>new ProductImage { PhotoPath=i.PhotoPath})
+                    .ToList(),
+                    
             };
         }
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DAJSBnZx2aEsZaJm5mqPafDHer0bXyhIw+owPs6Y4Cg0mcB/vIwKfTuFZ7rIooyhFQ7MHA1kaiIBG8ZuAO5OEw==",
+  "dgSpecHash": "N5QTFPAWrLA9NoM/vOJLibS/B4SDw+FOpl4n1F5VxeWb3GEC2xemkS7+MF2OuV4i1r52CEGImtUcyOg85cPmlA==",
   "success": true,
   "projectFilePath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\MOJA.MobileStore.Endpoint.mvc.csproj",
   "expectedPackageFiles": [
@@ -140,7 +140,7 @@
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.common\\6.3.1\\nuget.common.6.3.1.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.configuration\\6.3.1\\nuget.configuration.6.3.1.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.dependencyresolver.core\\6.3.1\\nuget.dependencyresolver.core.6.3.1.nupkg.sha512",
@@ -150,6 +150,7 @@
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.projectmodel\\6.3.1\\nuget.projectmodel.6.3.1.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
+    "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\PISHK3SVAT\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

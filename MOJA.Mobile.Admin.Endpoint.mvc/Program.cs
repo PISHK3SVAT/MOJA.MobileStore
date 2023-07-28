@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
+using MOJA.MobileStore.Infrastructure.Services.ImageServer;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.SignOutPerson;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Queries.SignInPerson;
 using MOJA.MobileStore.Persistence.Contexts;
@@ -45,7 +46,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 builder.Services.AddScoped<ISignInPersonService, SignInAdminService>();
 builder.Services.AddScoped<ISignOutPersonService, SignOutAdminService>();
-
+builder.Services.AddScoped<IImageUploadService, ImageUploadService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

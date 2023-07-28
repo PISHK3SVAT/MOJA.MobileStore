@@ -265,3 +265,6 @@ H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.Mob
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.MobileStore.Infrastructure.dll
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.MobileStore.Infrastructure.pdb
 H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.MobileStore.Common.pdb
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\RestSharp.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.MobileStore.Application.dll
+H:\Code\MOJA.MobileStore\MOJA.MobileStore.Endpoint.mvc\bin\Debug\net7.0\MOJA.MobileStore.Application.pdb

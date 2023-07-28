@@ -1,4 +1,6 @@
-﻿namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
+﻿using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Features;
+
+namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 {
     public class CreateProductDto
     {
@@ -53,6 +55,6 @@
         public int OSId { get; set; }
         public List<int> Sensors { get; set; } = new();
         public string BatterySpecifications { get; set; } = string.Empty;
-        //public List<IFormFile> Images { get; set; } = new();
+        public List<CreateProductProductImageDto> Images { get; set; } = new();
     }
 }
