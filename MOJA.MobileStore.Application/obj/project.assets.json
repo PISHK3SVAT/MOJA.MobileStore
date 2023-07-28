@@ -263,6 +263,16 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "MOJA.MobileStore.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MOJA.MobileStore.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MOJA.MobileStore.Common.dll": {}
+        }
+      },
       "MOJA.MobileStore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -665,6 +675,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "MOJA.MobileStore.Common/1.0.0": {
+      "type": "project",
+      "path": "../MOJA.MobileStore.Common/MOJA.MobileStore.Common.csproj",
+      "msbuildProject": "../MOJA.MobileStore.Common/MOJA.MobileStore.Common.csproj"
+    },
     "MOJA.MobileStore.Domain/1.0.0": {
       "type": "project",
       "path": "../MOJA.MobileStore.Domain/MOJA.MobileStore.Domain.csproj",
@@ -673,6 +688,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "MOJA.MobileStore.Common >= 1.0.0",
       "MOJA.MobileStore.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.9"
     ]
@@ -704,6 +720,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Common\\MOJA.MobileStore.Common.csproj": {
+              "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Common\\MOJA.MobileStore.Common.csproj"
+            },
             "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
               "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
             }

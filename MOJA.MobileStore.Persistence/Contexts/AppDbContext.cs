@@ -9,4 +9,5 @@ namespace MOJA.MobileStore.Persistence.Contexts
     {
         public DbSet<Product> Products { get; set; }
     }
+    
 }

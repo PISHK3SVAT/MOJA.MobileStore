@@ -11,8 +11,8 @@ namespace MOJA.MobileStore.Domain.Entities.Products
 {
     public class Product : BaseEntity<long>
     {
-        public long PointId { get; set; }
-        public Point Point { get; set; } = new();
+        public long? PointId { get; set; }
+        public Point? Point { get; set; }
         public List<MobileColor> MobileColors { get; set; } = new List<MobileColor>();
         public string ProductIntroduction { get; set; } = string.Empty;
         public int BrandId { get; set; }
@@ -50,7 +50,7 @@ namespace MOJA.MobileStore.Domain.Entities.Products
         public int BackGuardId { get; set; }
         public BackGuardMaterial BackGuard { get; set; } = new BackGuardMaterial();
         public string Model { get; set; } = string.Empty;
-        public Guid StoreProductID { get; set; }
+        public Guid StoreProductID { get; set; } = Guid.NewGuid();
         public string? OtherFeatures { get; set; }
         public string Chip { get; set; } = string.Empty;
         public string CPU { get; set; } = string.Empty;

@@ -4325,6 +4325,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "MOJA.MobileStore.Common": "1.0.0",
           "MOJA.MobileStore.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9"
         },

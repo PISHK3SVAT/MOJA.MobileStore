@@ -1219,6 +1219,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "MOJA.MobileStore.Common": "1.0.0",
           "MOJA.MobileStore.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9"
         },
@@ -1227,6 +1228,16 @@
         },
         "runtime": {
           "bin/placeholder/MOJA.MobileStore.Application.dll": {}
+        }
+      },
+      "MOJA.MobileStore.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MOJA.MobileStore.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MOJA.MobileStore.Common.dll": {}
         }
       },
       "MOJA.MobileStore.Domain/1.0.0": {
@@ -3657,6 +3668,11 @@
       "type": "project",
       "path": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj",
       "msbuildProject": "../MOJA.MobileStore.Application/MOJA.MobileStore.Application.csproj"
+    },
+    "MOJA.MobileStore.Common/1.0.0": {
+      "type": "project",
+      "path": "../MOJA.MobileStore.Common/MOJA.MobileStore.Common.csproj",
+      "msbuildProject": "../MOJA.MobileStore.Common/MOJA.MobileStore.Common.csproj"
     },
     "MOJA.MobileStore.Domain/1.0.0": {
       "type": "project",

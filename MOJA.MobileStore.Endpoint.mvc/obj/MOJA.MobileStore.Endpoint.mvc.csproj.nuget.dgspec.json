@@ -28,6 +28,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Common\\MOJA.MobileStore.Common.csproj": {
+                "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Common\\MOJA.MobileStore.Common.csproj"
+              },
               "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
                 "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
               }
