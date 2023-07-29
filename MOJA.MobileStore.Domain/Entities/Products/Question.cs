@@ -12,8 +12,8 @@ namespace MOJA.MobileStore.Domain.Entities.Products
     public class Question : BaseEntity<long>
     {
         public string Body { get; set; } = string.Empty;
-        public long OwnerId { get; set; }
-        public Customer Owner { get; set; } = new();
+        public long CustomerId { get; set; }
+        public Customer Customer { get; set; } = new();
         public long ProductId { get; set; }
         public Product Product { get; set; } = new();
         public List<Answer>? Answers { get; set; }

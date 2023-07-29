@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Domain.Entities.Users.Customers;
 using MOJA.MobileStore.Persistence.Configs.Users;
 using MOJA.MobileStore.Persistence.Configs.Users.Customers;
+using MOJA.MobileStore.Persistence.Converters;
 
 namespace MOJA.MobileStore.Persistence.Contexts
 {
@@ -34,7 +37,16 @@ namespace MOJA.MobileStore.Persistence.Contexts
             new CustomerAddressConfig().Configure(builder.Entity<CustomerAddress>());
             new PersonConfig().Configure(builder.Entity<Person>());
         }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<DateOnly>()
+                .HaveConversion<Converters.DateOnlyConverter>()
+                .HaveColumnType("date");
 
+            configurationBuilder.Properties<TimeOnly>()
+                .HaveConversion<Converters.TimeOnlyConverter>()
+                .HaveColumnType("time");
+        }
         private void _AdminSeeding(ModelBuilder builder)
         {
             var adminId = "b659e8f0-2663-48ac-8c3e-d5ef3726ba92";

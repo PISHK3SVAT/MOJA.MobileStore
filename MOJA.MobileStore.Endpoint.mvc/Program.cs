@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+using MOJA.MobileStore.Application.Interfaces.Contexts;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.CreatePerson;
@@ -12,6 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var connctionString = builder.Configuration.GetConnectionString("default");
+builder.Services.AddDbContext<IAppDbContext, AppDbContext>(options =>
+{
+    options.UseSqlServer(connctionString);
+});
 builder.Services.AddDbContext<IdentityDbContext>(option =>
 {
     option.UseSqlServer(connctionString);

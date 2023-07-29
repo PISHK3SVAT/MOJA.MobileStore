@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Identity;
 
+using MOJA.MobileStore.Domain.Entities.Products;
+
 namespace MOJA.MobileStore.Domain.Entities.Users
 {
     public class Person : IdentityUser
@@ -14,5 +16,7 @@ namespace MOJA.MobileStore.Domain.Entities.Users
         public string Family { get; set; } = "";
         public string? NationalCode { get; set; }
         public string? ProfilePhotoPath { get; set; }
+
+        public List<Answer>? Answers { get; set; }
     }
 }
