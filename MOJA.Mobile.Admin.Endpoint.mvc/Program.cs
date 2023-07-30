@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 using MOJA.MobileStore.Application.Interfaces.Contexts;
 using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct;
+using MOJA.MobileStore.Application.Services.Products.Interfaces;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Domain.Entities.Users.Admins;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
@@ -54,6 +55,7 @@ builder.Services.AddScoped<ISignInPersonService, SignInAdminService>();
 builder.Services.AddScoped<ISignOutPersonService, SignOutAdminService>();
 builder.Services.AddScoped<IImageUploadService, ImageUploadService>();
 builder.Services.AddScoped<ICreateProductService, CreateProductService>();
+builder.Services.AddScoped<GetListProductFeaturesPattern>();
 
 
 var app = builder.Build();

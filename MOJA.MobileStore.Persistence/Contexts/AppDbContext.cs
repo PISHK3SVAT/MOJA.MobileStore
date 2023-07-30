@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MOJA.MobileStore.Application.Interfaces.Contexts;
 using MOJA.MobileStore.Domain.Entities.Products;
+using MOJA.MobileStore.Domain.Entities.Products.Features;
 using MOJA.MobileStore.Domain.Entities.Users.Customers;
 
 namespace MOJA.MobileStore.Persistence.Contexts
@@ -9,7 +10,24 @@ namespace MOJA.MobileStore.Persistence.Contexts
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
         public DbSet<Product> Products { get; set; }
-
+        public DbSet<MobileColor> Colors { get; set; }
+        public DbSet<BackGuardMaterial> BackGuards { get; set; }
+        public DbSet<MobileBrand> MobileBrands { get; set; }
+        public DbSet<CommunicationNetwork> CommunicationNetworks { get; set; }
+        public DbSet<CommunicationTechnology> CommunicationTechnologies { get; set; }
+        public DbSet<InternalStorage> InternalStorages { get; set; }
+        public DbSet<MemoryCardSupport> MemoryCardSupports { get; set; }
+        public DbSet<MobileCategory> MobileCategories { get; set; }
+        public DbSet<MobileTechnology> MobileTechnologies { get; set; }
+        public DbSet<MobileOS> MobileOSs { get; set; }
+        public DbSet<PhotoResolution> PhotoResolutions { get; set; }
+        public DbSet<MobileRam> MobileRams { get; set; }
+        public DbSet<RearCamera> RearCameras { get; set; }
+        public DbSet<ScreenTechnology> ScreenTechnologies { get; set; }
+        public DbSet<MobileSensor> MobileSensors { get; set; }
+        public DbSet<SIMDesc> SIMDescs { get; set; }
+        public DbSet<MobileSize> MobileSizes { get; set; }
+        public DbSet<SpecialFeature> SpecialFeatures { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

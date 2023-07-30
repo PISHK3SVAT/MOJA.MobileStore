@@ -6,10 +6,10 @@ using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Feat
 
 namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
 {
-    public class CreateProductViewModel
+    public class CreateProductViewModelGet
     {
-        public CreateProductViewModel(SelectList colors, SelectList brands, SelectList sizes,
-            SelectList sIMDescs, SelectList speacialFeatures, SelectList selectedBackGuards,
+        public CreateProductViewModelGet(SelectList colors, SelectList brands, SelectList sizes,
+            SelectList sIMDescs, SelectList speacialFeatures, SelectList backGuards,
             SelectList communicationNetworks, SelectList rAMs, SelectList mobileCategorys,
             SelectList screenTechs, SelectList communicationTechs, SelectList mobileTechs,
             SelectList oSs, SelectList sensors, SelectList memoryCardSupports,
@@ -20,7 +20,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
             Sizes = sizes;
             SIMDescs = sIMDescs;
             SpeacialFeatures = speacialFeatures;
-            SelectedBackGuards = selectedBackGuards;
+            BackGuards = backGuards;
             CommunicationNetworks = communicationNetworks;
             RAMs = rAMs;
             MobileCategories = mobileCategorys;
@@ -45,26 +45,26 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
 
         [Display(Name = "برند")]
         [Required(ErrorMessage = "برند نباید خالی باشد")]
-        public int SelectedBrand { get; set; }
+        public int? SelectedBrand { get; set; }
         public SelectList Brands { get; set; }
-        
+
         #region Dimention
         [Display(Name = "طول")]
         [Required(ErrorMessage = "طول نباید خالی باشد")]
-        public float Length { get; set; }
+        public float? Length { get; set; }
         
         [Display(Name = "ارتفاع")]
         [Required(ErrorMessage = "ارتفاع نباید خالی باشد")]
-        public float Height { get; set; }
+        public float? Height { get; set; }
         
         [Display(Name = "عرض")]
         [Required(ErrorMessage = "عرض نباید خالی باشد")]
-        public float Width { get; set; }
+        public float? Width { get; set; }
         #endregion
         
         [Display(Name = "وزن")]
         [Required(ErrorMessage = "وزن نباید خالی باشد")]
-        public float Weight { get; set; }
+        public float? Weight { get; set; }
 
         #region Screen
         [Display(Name = "تکنولوژی صفحه")]
@@ -79,25 +79,26 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
         
         [Display(Name = "ارتفاع رزلوشن")]
         [Required(ErrorMessage = "ارتفاع رزلوشن نباید خالی باشد")]
-        public short ScreenResolutionHeight { get; set; }
+        public short? ScreenResolutionHeight { get; set; }
         
         [Display(Name = "طول رزلوشن")]
         [Required(ErrorMessage = "طول رزلوشن نباید خالی باشد")]
-        public short ScreenResolutionLenght { get; set; }
+        public short? ScreenResolutionLenght { get; set; }
         
         [Display(Name = "تراکم پیکسلی")]
         [Required(ErrorMessage = "تراکم پیکسلی نباید خالی باشد")]
-        public short ScreenPixelsPerInch { get; set; }
+        public short? ScreenPixelsPerInch { get; set; }
         #endregion
-        
+
         #region SIMCard
-        public int SelectedSIMDesc { get; set; }
         [Display(Name = "توضیحات سیمکارت")]
+        [Required(ErrorMessage = "این فیلد نباید خالی باشد")]
+        public int SelectedSIMDesc { get; set; }
         public SelectList SIMDescs { get; set; }
         
         [Display(Name = "تعداد سیمکارت")]
         [Required(ErrorMessage = "تعداد سیمکارت نباید خالی باشد")]
-        public short SIMCardNumber { get; set; }
+        public short? SIMCardNumber { get; set; }
         #endregion
 
         [Display(Name = "ساختار بدنه")]
@@ -110,20 +111,20 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
         public SelectList SpeacialFeatures { get; set; }
 
         [Display(Name = "تاریخ معرفی")]
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "تاریخ معرفی نباید خالی باشد")]
         public DateOnly IntrodutionDate { get; set; }
 
         [Display(Name = "محافظت")]
         [Required(ErrorMessage = "محافظت نباید خالی باشد")]
         public int SelectedBackGuard { get; set; }
-        public SelectList SelectedBackGuards { get; set; }
+        public SelectList BackGuards { get; set; }
 
         [Display(Name = "مدل")]
         [Required(ErrorMessage = "مدل نباید خالی باشد")]
         public string Model { get; set; } = string.Empty;
 
         [Display(Name = "سایر قابلیت ها")]
-        [Required(ErrorMessage = "سایر قابلیت ها نباید خالی باشد")]
         public string? OtherFeatures { get; set; }
 
         [Display(Name = "تراشه")]
@@ -186,7 +187,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
 
         [Display(Name = "نسخه بلوتوث")]
         [Required(ErrorMessage = "این فیلد نباید خالی باشد")]
-        public float BluetoothVersion { get; set; }
+        public float? BluetoothVersion { get; set; }
 
         [Display(Name = "فناوری موبایل")]
         [Required(ErrorMessage = "این فیلد نباید خالی باشد")]

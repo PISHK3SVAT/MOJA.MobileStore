@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Products\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MOJA.MobileStore.Common\MOJA.MobileStore.Common.csproj" />
     <ProjectReference Include="..\MOJA.MobileStore.Domain\MOJA.MobileStore.Domain.csproj" />
   </ItemGroup>

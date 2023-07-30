@@ -132,7 +132,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("BackGuardMaterial");
+                    b.ToTable("BackGuards");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.CommunicationNetwork", b =>
@@ -149,7 +149,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("CommunicationNetwork");
+                    b.ToTable("CommunicationNetworks");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.CommunicationTechnology", b =>
@@ -166,7 +166,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("CommunicationTechnology");
+                    b.ToTable("CommunicationTechnologies");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.InternalStorage", b =>
@@ -183,7 +183,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("InternalStorage");
+                    b.ToTable("InternalStorages");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MemoryCardSupport", b =>
@@ -200,7 +200,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MemoryCardSupport");
+                    b.ToTable("MemoryCardSupports");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileBrand", b =>
@@ -212,11 +212,9 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("About")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LogoPath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -225,7 +223,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileBrand");
+                    b.ToTable("MobileBrands");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileCategory", b =>
@@ -242,7 +240,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileCategory");
+                    b.ToTable("MobileCategories");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileColor", b =>
@@ -259,7 +257,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileColor");
+                    b.ToTable("Colors");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileOS", b =>
@@ -280,7 +278,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileOS");
+                    b.ToTable("MobileOSs");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileRam", b =>
@@ -297,7 +295,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileRam");
+                    b.ToTable("MobileRams");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileSensor", b =>
@@ -314,7 +312,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileSensor");
+                    b.ToTable("MobileSensors");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileSize", b =>
@@ -331,7 +329,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileSize");
+                    b.ToTable("MobileSizes");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.MobileTechnology", b =>
@@ -348,7 +346,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("MobileTechnology");
+                    b.ToTable("MobileTechnologies");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.PhotoResolution", b =>
@@ -365,7 +363,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("PhotoResolution");
+                    b.ToTable("PhotoResolutions");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.RearCamera", b =>
@@ -382,7 +380,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("RearCamera");
+                    b.ToTable("RearCameras");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.SIMDesc", b =>
@@ -399,7 +397,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("SIMDesc");
+                    b.ToTable("SIMDescs");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.ScreenTechnology", b =>
@@ -416,7 +414,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("ScreenTechnology");
+                    b.ToTable("ScreenTechnologies");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Features.SpecialFeature", b =>
@@ -433,7 +431,7 @@ namespace MOJA.MobileStore.Persistence.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("SpecialFeature");
+                    b.ToTable("SpecialFeatures");
                 });
 
             modelBuilder.Entity("MOJA.MobileStore.Domain.Entities.Products.Point", b =>

@@ -1,7 +1,13 @@
 ﻿@using MOJA.Mobile.Admin.Endpoint.mvc.Models.Product;
-@model CreateProductViewModel
+@model CreateProductViewModelGet
 @{
     ViewData["Title"] = "ایجاد محصول";
+}
+@section Styles{
+    <link href="~/theme/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="~/theme/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/theme/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
 }
 <div class="row">
     <div id="flFormsGrid" class="col-lg-12 layout-spacing">
@@ -14,111 +20,298 @@
                 </div>
             </div>
             <div class="widget-content widget-content-area">
-                <form asp-action="Create" method="post">
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-row mb-4">
-                        <div class="form-group col-md-6">
-                            <label asp-for="SelectedColors"></label>
-                            <select asp-for="SelectedColors" asp-items="@Model.Colors" class="form-control" multiple></select>
-                            <span asp-validation-for="SelectedColors" class="text-danger"></span>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label asp-for="Introduction"></label>
-                            <textarea asp-for="Introduction" class="form-control" rows="3" style="height: 105px;"></textarea>
-                            <span asp-validation-for="Introduction" class="text-danger"></span>
-                        </div>
-                    </div>
+                    
                     <div class="form-group mb-4">
-                        <label asp-for="SelectedBrand"></label>
-                        <select asp-for="SelectedBrand" asp-items="@Model.Brands" class="form-control" multiple></select>
-                        <span asp-validation-for="SelectedBrand" class="text-danger"></span>
+                        <label asp-for="Introduction"></label>
+                        <textarea asp-for="Introduction" class="form-control" rows="3" style="height: 105px;"></textarea>
+                        <span asp-validation-for="Introduction" class="text-danger"></span>
                     </div>
-                    <div class="form-group mb-4">
-                        <label asp-for="Length"></label>
-                        <input asp-for="Length" class="form-control" />
-                        <span asp-validation-for="Length" class="text-danger"></span>
-                    </div>
+
                     <div class="form-row mb-4">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-2">
+                            <label asp-for="Length"></label>
+                            <input asp-for="Length" class="form-control" />
+                            <span asp-validation-for="Length" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
                             <label asp-for="Height"></label>
                             <input asp-for="Height" class="form-control" />
                             <span asp-validation-for="Height" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-2">
                             <label asp-for="Width"></label>
                             <input asp-for="Width" class="form-control" />
                             <span asp-validation-for="Width" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputZip">کدپستی</label>
-                            <input type="text" class="form-control" id="inputZip">
+                            <label asp-for="Weight"></label>
+                            <input asp-for="Weight" class="form-control" />
+                            <span asp-validation-for="Weight" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="ScreenResolutionHeight"></label>
+                            <input asp-for="ScreenResolutionHeight" class="form-control" />
+                            <span asp-validation-for="ScreenResolutionHeight" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="ScreenResolutionLenght"></label>
+                            <input asp-for="ScreenResolutionLenght" class="form-control" />
+                            <span asp-validation-for="ScreenResolutionLenght" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-check pl-0">
-                            <div class="custom-control custom-checkbox checkbox-info">
-                                <input type="checkbox" class="custom-control-input" id="gridCheck">
-                                <label class="custom-control-label" for="gridCheck">من را بررسی کنید</label>
+
+                    @*multiple selection*@
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedColors"></label>
+                            <select asp-for="SelectedColors" asp-items="@Model.Colors" class="form-control" multiple></select>
+                            <span asp-validation-for="SelectedColors" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label asp-for="SelectedSpecialFeatures"></label>
+                            <select asp-for="SelectedSpecialFeatures" asp-items="@Model.SpeacialFeatures" multiple class="form-control"></select>
+                            <span asp-validation-for="SelectedSpecialFeatures" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedCommunicationNetworks"></label>
+                            <select asp-for="SelectedCommunicationNetworks" asp-items="@Model.CommunicationNetworks" multiple class="form-control"></select>
+                            <span asp-validation-for="SelectedCommunicationNetworks" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedCommunicationTechs"></label>
+                            <select asp-for="SelectedCommunicationTechs" asp-items="@Model.CommunicationTechs" multiple class="form-control"></select>
+                            <span asp-validation-for="SelectedCommunicationTechs" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label asp-for="SelectedSensors"></label>
+                            <select asp-for="SelectedSensors" asp-items="@Model.Sensors" multiple class="form-control"></select>
+                            <span asp-validation-for="SelectedSensors" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedMobileTechs"></label>
+                            <select asp-for="SelectedMobileTechs" asp-items="@Model.MobileTechs" multiple class="form-control"></select>
+                            <span asp-validation-for="SelectedMobileTechs" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    @*one selection*@
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedBrand"></label>
+                            <select asp-for="SelectedBrand" asp-items="@Model.Brands" class="form-control"></select>
+                            <span asp-validation-for="SelectedBrand" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedScreenTech"></label>
+                            <select asp-for="SelectedScreenTech" asp-items="@Model.ScreenTechs" class="form-control"></select>
+                            <span asp-validation-for="SelectedScreenTech" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedSize"></label>
+                            <select asp-for="SelectedSize" asp-items="@Model.Sizes" class="form-control"></select>
+                            <span asp-validation-for="SelectedSize" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedSIMDesc"></label>
+                            <select asp-for="SelectedSIMDesc" asp-items="@Model.SIMDescs" class="form-control"></select>
+                            <span asp-validation-for="SelectedSIMDesc" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedBackGuard"></label>
+                            <select asp-for="SelectedBackGuard" asp-items="@Model.BackGuards" class="form-control"></select>
+                            <span asp-validation-for="SelectedBackGuard" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedInternalStorage"></label>
+                            <select asp-for="SelectedInternalStorage" asp-items="@Model.InternalStorages" class="form-control"></select>
+                            <span asp-validation-for="SelectedInternalStorage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    @*one selection*@
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedRAM"></label>
+                            <select asp-for="SelectedRAM" asp-items="@Model.RAMs" class="form-control"></select>
+                            <span asp-validation-for="SelectedRAM" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedMemoryCardSupport"></label>
+                            <select asp-for="SelectedMemoryCardSupport" asp-items="@Model.MemoryCardSupports" class="form-control"></select>
+                            <span asp-validation-for="SelectedMemoryCardSupport" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedMobileCategory"></label>
+                            <select asp-for="SelectedMobileCategory" asp-items="@Model.MobileCategories" class="form-control"></select>
+                            <span asp-validation-for="SelectedMobileCategory" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedMobileCategory"></label>
+                            <select asp-for="SelectedMobileCategory" asp-items="@Model.MobileCategories" class="form-control"></select>
+                            <span asp-validation-for="SelectedMobileCategory" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedOS"></label>
+                            <select asp-for="SelectedOS" asp-items="@Model.OSs" class="form-control"></select>
+                            <span asp-validation-for="SelectedOS" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedRearCamera"></label>
+                            <select asp-for="SelectedRearCamera" asp-items="@Model.RearCameras" class="form-control"></select>
+                            <span asp-validation-for="SelectedRearCamera" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-2">
+                            <label asp-for="ScreenPixelsPerInch"></label>
+                            <input asp-for="ScreenPixelsPerInch" class="form-control" />
+                            <span asp-validation-for="ScreenPixelsPerInch" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SIMCardNumber"></label>
+                            <input asp-for="SIMCardNumber" class="form-control" />
+                            <span asp-validation-for="SIMCardNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Bluetooth"></label>
+                            <input asp-for="Bluetooth" class="form-control" />
+                            <span asp-validation-for="Bluetooth" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="BluetoothVersion"></label>
+                            <input asp-for="BluetoothVersion" class="form-control" />
+                            <span asp-validation-for="BluetoothVersion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Flash"></label>
+                            <input asp-for="Flash" class="form-control" />
+                            <span asp-validation-for="Flash" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Is64Bit"></label>
+                            <input asp-for="Is64Bit" class="form-control">
+                            <span asp-validation-for="Is64Bit" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-5">
+                            <label asp-for="BodyStructure"></label>
+                            <input asp-for="BodyStructure" class="form-control" />
+                            <span asp-validation-for="BodyStructure" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label asp-for="Model"></label>
+                            <input asp-for="Model" class="form-control">
+                            <span asp-validation-for="Model" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="IntrodutionDate"></label>
+                            <input asp-for="IntrodutionDate" class="form-control">
+                            <span asp-validation-for="IntrodutionDate" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-5">
+                            <label asp-for="Chip"></label>
+                            <input asp-for="Chip" class="form-control">
+                            <span asp-validation-for="Chip" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="CPU"></label>
+                            <input asp-for="CPU" class="form-control">
+                            <span asp-validation-for="CPU" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label asp-for="CPUFrequency"></label>
+                            <input asp-for="CPUFrequency" class="form-control">
+                            <span asp-validation-for="CPUFrequency" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-6">
+                            <label asp-for="OtherFeatures"></label>
+                            <input asp-for="OtherFeatures" class="form-control">
+                            <span asp-validation-for="OtherFeatures" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Wifi"></label>
+                            <input asp-for="Wifi" class="form-control" />
+                            <span asp-validation-for="Wifi" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-4">
+                            <label asp-for="GPU"></label>
+                            <input asp-for="GPU" class="form-control">
+                            <span asp-validation-for="GPU" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="CommunicationPorts"></label>
+                            <input asp-for="CommunicationPorts" class="form-control" />
+                            <span asp-validation-for="CommunicationPorts" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedPhotoResolution"></label>
+                            <select asp-for="SelectedPhotoResolution" asp-items="@Model.PhotoResolutions" class="form-control"></select>
+                            <span asp-validation-for="SelectedPhotoResolution" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-12">
+                            <label asp-for="CameraCapabilitiesDescriptions"></label>
+                            <input asp-for="CameraCapabilitiesDescriptions" class="form-control" />
+                            <span asp-validation-for="CameraCapabilitiesDescriptions" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-12">
+                            <label asp-for="FilmingDescriptions"></label>
+                            <input asp-for="FilmingDescriptions" class="form-control" />
+                            <span asp-validation-for="FilmingDescriptions" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-12">
+                            <label asp-for="FrontCameraDescriptions"></label>
+                            <input asp-for="FrontCameraDescriptions" class="form-control" />
+                            <span asp-validation-for="FrontCameraDescriptions" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-12">
+                            <label asp-for="BatterySpecifications"></label>
+                            <input asp-for="BatterySpecifications" class="form-control" />
+                            <span asp-validation-for="BatterySpecifications" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-12">
+                            <div class="custom-file-container" data-upload-id="mobileImages">
+                                <label asp-for="Images"></label>
+                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">x</a></label>
+                                <label class="custom-file-container__custom-file">
+                                    <input asp-for="Images" type="file" class="custom-file-container__custom-file__custom-file-input" multiple>
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                </label>
+                                <span asp-validation-for="Images" class="text-danger"></span>
+                                <div class="custom-file-container__image-preview"></div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">ورود</button>
+                    <button type="submit" class="btn btn-success mt-3">ثبت محصول</button>
                 </form>
-
-                <div class="code-section-container">
-
-                    <button class="btn toggle-code-snippet"><span>کد</span></button>
-
-                    <div class="code-section text-left">
-                        <pre class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-row mb-4"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-6"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputEmail4"</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputEmail4"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"ایمیل"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-6"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputPassword4"</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputPassword4"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"رمزعبور"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group mb-4"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputAddress"</span>&gt;</span>Address<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputAddress"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"1234 Main St"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group mb-4"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputAddress2"</span>&gt;</span>Address 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputAddress2"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Apartment, studio, or floor"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-row mb-4"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-6"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputCity"</span>&gt;</span>City<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputCity"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-4"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputState"</span>&gt;</span>State<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputState"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>انتخاب کنید...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group col-md-2"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"inputZip"</span>&gt;</span>Zip<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inputZip"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-check pl-0"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"custom-control custom-checkbox checkbox-info"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"custom-control-input"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gridCheck"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"custom-control-label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"gridCheck"</span>&gt;</span>من را بررسی کنید<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary mt-3"</span>&gt;</span>ورود<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-                        </pre>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -127,4 +320,15 @@
 
 @section Scripts{
     @await Html.PartialAsync("_ValidationScriptsPartial");
+    <script src="~/theme/assets/js/scrollspyNav.js"></script>
+    <script src="~/theme/plugins/file-upload/file-upload-with-preview.min.js"></script>
+
+    <script src="~/theme/plugins/flatpickr/flatpickr.js"></script>
+
+    <script>
+        var secondUpload = new FileUploadWithPreview('mobileImages');
+
+        var f1 = flatpickr(document.getElementById('IntrodutionDate'));
+
+    </script>
 }
