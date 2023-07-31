@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 using MOJA.Mobile.Admin.Endpoint.mvc.Models.Product;
+using MOJA.MobileStore.Application.Interfaces.Contexts;
 using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct;
 using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Features;
 using MOJA.MobileStore.Application.Services.Products.Interfaces;
@@ -13,12 +15,50 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
     {
         private readonly GetListProductFeaturesPattern _getListProductFeatures;
         private readonly ICreateProductService _createProductService;
-        private IImageUploadService _imageUploadService;
-        public ProductController(GetListProductFeaturesPattern getListProductFeatures, ICreateProductService createProductService, IImageUploadService imageUploadService)
+        private readonly IAppDbContext db;
+        public ProductController(GetListProductFeaturesPattern getListProductFeatures,
+            ICreateProductService createProductService,
+            IAppDbContext db)
         {
             _getListProductFeatures = getListProductFeatures;
             _createProductService = createProductService;
-            _imageUploadService = imageUploadService;
+            this.db = db;
+        }
+
+        [HttpGet]
+        public IActionResult Show()
+        {
+            var products = db.Products
+                .Include(p=>p.ScreenTechnology)
+                .Include(p=>p.Size)
+                .Include(p=>p.InternalStorage)
+                .Include(p=>p.RAM)
+                .Select(p => new ShowProductTableViewModel
+                {
+                    Id=p.Id,
+                    Model=p.Model,
+                    ScreenTech = p.ScreenTechnology.Title,
+                    Size=p.Size.Title,
+                    InternalStorage =p.InternalStorage.Title,
+                    Ram=p.RAM.Title,
+                })
+                .ToList();
+
+            return View(products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(long Id)
+        {
+            var product= await db.Products.FirstOrDefaultAsync(p=>p.Id==Id);
+            if (product == null)
+            {
+                // not found
+                return RedirectToAction(nameof(Show),"Product");
+            }
+            db.Products.Remove(product);
+            await db.SaveChangesAsync();
+            return RedirectToAction(nameof(Show), "Product");
         }
 
         [HttpGet]

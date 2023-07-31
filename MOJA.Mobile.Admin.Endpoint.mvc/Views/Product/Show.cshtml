@@ -1,0 +1,42 @@
+﻿@using MOJA.Mobile.Admin.Endpoint.mvc.Models.Product;
+@model IEnumerable<ShowProductTableViewModel>;
+@{
+    ViewData["Title"] = "لیست محصولات";
+}
+@section Styles{
+    <link href="~/theme/~/theme/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+}
+<div class="table-responsive">
+    <table class="table table-bordered table-striped mb-4">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(p=>p.Model)</th>
+                <th>@Html.DisplayNameFor(p=>p.ScreenTech)</th>
+                <th>@Html.DisplayNameFor(p=>p.Size)</th>
+                <th>@Html.DisplayNameFor(p=>p.InternalStorage)</th>
+                <th>@Html.DisplayNameFor(p=>p.Ram)</th>
+                <th class="text-center">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+            {
+                <tr>
+                    <td>@product.Model</td>
+                    <td>@product.ScreenTech</td>
+                    <td>@product.Size</td>
+                    <td class=" text-center">@product.InternalStorage</td>
+                    <td class=" text-center">@product.Ram</td>
+                    <td class="text-center">
+                        <a asp-action="Detail" asp-controller="Product" asp-route-Id="@product.Id" 
+                            class="btn btn-info m-1">مشاهده</a>
+                        <a asp-action="Update" asp-controller="Product" asp-route-Id="@product.Id" 
+                            class="btn btn-warning m-1">ویرایش</a>
+                        <a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.Id"
+                            class="btn btn-danger m-1">حذف</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
