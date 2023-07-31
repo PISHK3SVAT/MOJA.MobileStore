@@ -53,6 +53,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
                 Weight=vm.Weight,
                 Width=vm.Width,
                 Wifi=vm.Wifi,
+                Images=vm.Images
             };
         }
     }

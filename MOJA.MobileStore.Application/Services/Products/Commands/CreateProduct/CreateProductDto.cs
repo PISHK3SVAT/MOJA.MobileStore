@@ -1,4 +1,6 @@
-﻿using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Features;
+﻿using Microsoft.AspNetCore.Http;
+
+using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Features;
 
 namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 {
@@ -55,6 +57,6 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
         public int OSId { get; set; }
         public List<int> Sensors { get; set; } = new();
         public string BatterySpecifications { get; set; } = string.Empty;
-        public List<CreateProductProductImageDto> Images { get; set; } = new();
+        public List<IFormFile> Images { get; set; } = new();
     }
 }

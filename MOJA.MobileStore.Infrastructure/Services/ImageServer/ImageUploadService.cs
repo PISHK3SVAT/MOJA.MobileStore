@@ -8,9 +8,9 @@ namespace MOJA.MobileStore.Infrastructure.Services.ImageServer
 {
     public class ImageUploadService : IImageUploadService
     {
-        public List<string> Upload(List<IFormFile> files)
+        public List<string> Upload(string parentDir, List<IFormFile> files)
         {
-            var client = new RestClient("https://localhost:44327/api/Images");
+            var client = new RestClient($"https://localhost:7051/api/image?parentDir={parentDir}");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             foreach (var item in files)
@@ -27,7 +27,7 @@ namespace MOJA.MobileStore.Infrastructure.Services.ImageServer
 
             IRestResponse response = client.Execute(request);
             UploadDto upload = JsonConvert.DeserializeObject<UploadDto>(response.Content)!;
-            return upload!.Pathes;
+            return upload.Pathes;
 
         }
     }

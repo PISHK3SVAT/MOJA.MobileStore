@@ -33,6 +33,9 @@
               },
               "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj": {
                 "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Domain\\MOJA.MobileStore.Domain.csproj"
+              },
+              "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Infrastructure\\MOJA.MobileStore.Infrastructure.csproj": {
+                "projectPath": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Infrastructure\\MOJA.MobileStore.Infrastructure.csproj"
               }
             }
           }
@@ -47,6 +50,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.9, )"

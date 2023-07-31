@@ -4340,6 +4340,8 @@
         "dependencies": {
           "MOJA.MobileStore.Common": "1.0.0",
           "MOJA.MobileStore.Domain": "1.0.0",
+          "MOJA.MobileStore.Infrastructure": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.9"
         },
         "compile": {

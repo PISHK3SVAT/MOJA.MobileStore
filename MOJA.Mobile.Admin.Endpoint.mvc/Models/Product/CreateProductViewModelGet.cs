@@ -45,7 +45,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
 
         [Display(Name = "برند")]
         [Required(ErrorMessage = "برند نباید خالی باشد")]
-        public int? SelectedBrand { get; set; }
+        public int SelectedBrand { get; set; }
         public SelectList Brands { get; set; }
 
         #region Dimention

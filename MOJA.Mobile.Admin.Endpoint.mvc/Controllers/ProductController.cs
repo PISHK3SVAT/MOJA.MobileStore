@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 using MOJA.Mobile.Admin.Endpoint.mvc.Models.Product;
 using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct;
+using MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct.Features;
 using MOJA.MobileStore.Application.Services.Products.Interfaces;
+using MOJA.MobileStore.Infrastructure.Services.ImageServer;
 
 namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
 {
@@ -11,10 +13,12 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
     {
         private readonly GetListProductFeaturesPattern _getListProductFeatures;
         private readonly ICreateProductService _createProductService;
-        public ProductController(GetListProductFeaturesPattern getListProductFeatures, ICreateProductService createProductService)
+        private IImageUploadService _imageUploadService;
+        public ProductController(GetListProductFeaturesPattern getListProductFeatures, ICreateProductService createProductService, IImageUploadService imageUploadService)
         {
             _getListProductFeatures = getListProductFeatures;
             _createProductService = createProductService;
+            _imageUploadService = imageUploadService;
         }
 
         [HttpGet]

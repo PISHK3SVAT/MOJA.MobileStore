@@ -10,6 +10,6 @@ namespace MOJA.MobileStore.Infrastructure.Services.ImageServer
 {
     public interface IImageUploadService
     {
-        List<string> Upload(List<IFormFile> files);
+        List<string> Upload(string parentDir, List<IFormFile> files);
     }
 }

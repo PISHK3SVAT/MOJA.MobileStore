@@ -15,7 +15,8 @@ namespace MOJA.MobileStore.StaticFile.Endpoint.mvc.Controllers
             _environment = environment;
         }
 
-        public IActionResult Post(/*string apiKey*/)
+        [HttpPost]
+        public IActionResult Post(string parentDir/*string apiKey*/)
         {
             //if (apiKey != "mysecretkey")
             //{
@@ -29,7 +30,7 @@ namespace MOJA.MobileStore.StaticFile.Endpoint.mvc.Controllers
                 if (files != null)
                 {
                     //upload
-                    return Ok(UploadFile(files));
+                    return Ok(UploadFile(parentDir,files));
                 }
                 else
                 {
@@ -45,11 +46,11 @@ namespace MOJA.MobileStore.StaticFile.Endpoint.mvc.Controllers
 
 
         }
-        private UploadDto UploadFile(IFormFileCollection files)
+        private UploadDto UploadFile(string parentDir,IFormFileCollection files)
         {
             string newName = Guid.NewGuid().ToString();
             var date = DateTime.Now;
-            string folder = $@"Resources\images\{date.Year}\{date.Month}\";
+            string folder = $@"Resources\images\{parentDir}\{date.Year}\{date.Month}\";
             var uploadsRootFolder = Path.Combine(_environment.WebRootPath, folder);
             if (!Directory.Exists(uploadsRootFolder))
             {
