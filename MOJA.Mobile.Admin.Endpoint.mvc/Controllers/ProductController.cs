@@ -48,6 +48,57 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Update(long Id)
+        {
+            var product = await db.Products
+                .FirstOrDefaultAsync(p => p.Id == Id);
+            if (product == null)
+            {
+                // not found
+                return RedirectToAction(nameof(Show), "Product");
+            }
+            var phResolution = await _getListProductFeatures.GetPhotoResolutionsService.ExecuteAsync();
+            var sizes = await _getListProductFeatures.GetMobileSizesService.ExecuteAsync();
+            var vm = new UpdateProductViewModel
+            {
+                Id=product.Id,
+                PhotoResolutions=new SelectList(phResolution,"Id","Title"),
+                SelectedPhotoResolution=product.PhotoResolutionId,
+                Sizes=new SelectList(sizes,"Id","Title"),
+                SelectedSize=product.SizeId,
+                Height=product.Height,
+                Length=product.Length,
+                Width=product.Width
+            };
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(UpdateProductViewModel vm)
+        {
+            var product = await db.Products
+                .Include(p=>p.PhotoResolution)
+                .Include(p=>p.Size)
+                .FirstOrDefaultAsync(p => p.Id == vm.Id);
+            if (product == null)
+            {
+                // not found
+                return RedirectToAction(nameof(Show), "Product");
+            }
+            product.PhotoResolution = db.PhotoResolutions
+                .FirstOrDefault(p => p.Id == vm.SelectedPhotoResolution)!;
+
+            product.Size = db.MobileSizes.FirstOrDefault(p => p.Id == vm.SelectedSize)!;
+
+            product.Length = vm.Length;
+            product.Height = vm.Height;
+            product.Width = vm.Width;
+
+            await db.SaveChangesAsync();
+            return RedirectToAction(nameof(Show), "Product");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Delete(long Id)
         {
             var product= await db.Products.FirstOrDefaultAsync(p=>p.Id==Id);
@@ -58,6 +109,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
             }
             db.Products.Remove(product);
             await db.SaveChangesAsync();
+            //delete related image from fs
             return RedirectToAction(nameof(Show), "Product");
         }
 
@@ -131,7 +183,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Controllers
             {
                 //
             }
-            return RedirectToAction("Index","Home");
+            return RedirectToAction(nameof(Show),"Product");
         }
     }
 }

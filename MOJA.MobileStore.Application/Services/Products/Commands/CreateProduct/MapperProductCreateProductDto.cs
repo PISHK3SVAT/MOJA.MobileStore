@@ -17,7 +17,7 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 
             var product = new Product
             {
-                BackGuardId = dto.BackGuardId,
+                BackGuard = db.BackGuards.Find(dto.BackGuardId)!,
                 BatterySpecifications = dto.BatterySpecifications,
                 Bluetooth = dto.Bluetooth,
                 BluetoothVersion = dto.BluetoothVersion,
@@ -39,7 +39,7 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
                 FrontCameraDescriptions = dto.FrontCameraDescriptions,
                 GPU = dto.GPU,
                 Height = dto.Height,
-                InternalStorageId = dto.InternalStorageId,
+                InternalStorage = db.InternalStorages.Find(dto.InternalStorageId)!,
                 IntrodutionDate = dto.IntrodutionDate,
                 Is64Bit = dto.Is64Bit,
                 Length = dto.Length,
@@ -66,7 +66,7 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
                     .Select(s => db.MobileSensors.Find(s)!)
                     .ToList(),
                 Size = db.MobileSizes.Find(dto.SizeId)!,
-                SIMDescId = dto.SIMDescId,
+                SIMDesc = db.SIMDescs.Find(dto.SIMDescId)!,
                 SIMCardNumber = dto.SIMCardNumber,
                 SpecialFeatures = dto.SpecialFeatures
                     .Select(sp =>db.SpecialFeatures.Find(sp)!)

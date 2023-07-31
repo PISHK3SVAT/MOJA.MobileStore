@@ -1,0 +1,56 @@
+﻿@using MOJA.Mobile.Admin.Endpoint.mvc.Models.Product;
+@model UpdateProductViewModel;
+@{
+    ViewData["Title"] = "ویرایش محصول";
+}
+<div class="row">
+    <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-header">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                        <h4>فرم شبکه ای </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content widget-content-area">
+                <form asp-action="Update" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row mb-4">
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedPhotoResolution"></label>
+                            <select asp-for="SelectedPhotoResolution" asp-items="@Model.PhotoResolutions" class="form-control"></select>
+                            <span asp-validation-for="SelectedPhotoResolution" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SelectedSize"></label>
+                            <select asp-for="SelectedSize" asp-items="@Model.Sizes" class="form-control"></select>
+                            <span asp-validation-for="SelectedSize" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Length"></label>
+                            <input asp-for="Length" type="number" class="form-control" />
+                            <span asp-validation-for="Length" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Height"></label>
+                            <input asp-for="Height" type="number" class="form-control" />
+                            <span asp-validation-for="Height" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Width"></label>
+                            <input asp-for="Width" type="number" class="form-control" />
+                            <span asp-validation-for="Width" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3">ویرایش محصول</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial");
+}
