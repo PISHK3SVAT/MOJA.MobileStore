@@ -11,8 +11,6 @@ namespace MOJA.MobileStore.Domain.Entities.Products
 {
     public class Product : BaseEntity<long>
     {
-        public long? PointId { get; set; }
-        public Point? Point { get; set; }
         public List<MobileColor> MobileColors { get; set; } = new List<MobileColor>();
         public string ProductIntroduction { get; set; } = string.Empty;
         public int BrandId { get; set; }

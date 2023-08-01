@@ -28,6 +28,7 @@ namespace MOJA.MobileStore.Persistence.Contexts
         public DbSet<SIMDesc> SIMDescs { get; set; }
         public DbSet<MobileSize> MobileSizes { get; set; }
         public DbSet<SpecialFeature> SpecialFeatures { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

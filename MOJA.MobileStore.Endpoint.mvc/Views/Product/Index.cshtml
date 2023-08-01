@@ -1,0 +1,52 @@
+﻿@using MOJA.MobileStore.Endpoint.mvc.Models.Product;
+@model IEnumerable<ProductPLPViewModel>;
+@{
+}
+<div class="row mb-5" style="transform: none;">
+    <div class="col-lg-9 col-md-8 mx-auto">
+        <div class="listing-items row">
+
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 px-0">
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <a asp-action="Detail" asp-controller="Product" 
+                                asp-route-Model="@product.Model" class="product-image">
+                                <img src="@product.Image" alt="@product.Model image">
+                            </a>
+                            @*                        <div class="product-card-actions">
+                        <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        <button class="add-to-compare"><i class="fas fa-random"></i></button>
+                        </div>*@
+                        </div>
+                        <div class="product-card-middle">
+                            @*                        <div class="ratings-container">
+                        <div class="ratings">
+                        <div class="ratings-val" style="width: 65%;"></div>
+                        </div>
+                        </div>*@
+                            <h6 class="product-name">
+                                <a asp-action="Detail" asp-controller="Product" asp-route-Model="@product.Model">
+                                    @product.Model
+                                </a>
+                            </h6>
+                            <div class="product-price product-price-clone">
+                                @string.Format("{0:n}",@product.Price) تومان</div>
+                        </div>
+                        <div class="product-card-bottom">
+                            <div class="product-price">
+                                @string.Format("{0:n}",@product.Price) تومان
+                            </div>
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fad fa-cart-plus"></i>
+                                افزودن به سبد خرید
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

@@ -32,8 +32,8 @@ namespace MOJA.MobileStore.Application.Interfaces.Contexts
         DbSet<SIMDesc> SIMDescs { get; set; }
         DbSet<MobileSize> MobileSizes { get; set; }
         DbSet<SpecialFeature> SpecialFeatures { get; set; }
-        
-        
+        DbSet<ProductImage> ProductImages { get; set; }
+
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
