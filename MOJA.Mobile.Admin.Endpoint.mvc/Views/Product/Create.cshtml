@@ -15,7 +15,7 @@
             <div class="widget-header">
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                        <h4>فرم شبکه ای </h4>
+                        <h4>ایجاد محصول جدید</h4>
                     </div>
                 </div>
             </div>
@@ -252,7 +252,7 @@
                             <input asp-for="GPU" class="form-control">
                             <span asp-validation-for="GPU" class="text-danger"></span>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label asp-for="CommunicationPorts"></label>
                             <input asp-for="CommunicationPorts" class="form-control" />
                             <span asp-validation-for="CommunicationPorts" class="text-danger"></span>
@@ -261,6 +261,11 @@
                             <label asp-for="SelectedPhotoResolution"></label>
                             <select asp-for="SelectedPhotoResolution" asp-items="@Model.PhotoResolutions" class="form-control"></select>
                             <span asp-validation-for="SelectedPhotoResolution" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="SalesPrice"></label>
+                            <input asp-for="SalesPrice" class="form-control">
+                            <span asp-validation-for="SalesPrice" class="text-danger"></span>
                         </div>
                     </div>
 

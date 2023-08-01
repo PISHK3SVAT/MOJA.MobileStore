@@ -6,6 +6,7 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 {
     public class CreateProductDto
     {
+        public int SalesPrice { get; set; }
         public List<int> Colors { get; set; } = new();
         public string Introduction { get; set; } = string.Empty;
         public int BrandId { get; set; }

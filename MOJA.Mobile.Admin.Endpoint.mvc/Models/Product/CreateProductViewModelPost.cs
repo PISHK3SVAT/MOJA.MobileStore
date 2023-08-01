@@ -2,6 +2,7 @@
 {
     public class CreateProductViewModelPost
     {
+        public int SalesPrice { get; set; }
         public List<int> SelectedColors { get; set; } = new();
         public string Introduction { get; set; } = string.Empty;
         public int SelectedBrand { get; set; }

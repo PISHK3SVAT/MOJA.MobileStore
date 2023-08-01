@@ -11,6 +11,7 @@ namespace MOJA.MobileStore.Domain.Entities.Products
 {
     public class Product : BaseEntity<long>
     {
+        public int SalesPrice { get; set; }
         public List<MobileColor> MobileColors { get; set; } = new List<MobileColor>();
         public string ProductIntroduction { get; set; } = string.Empty;
         public int BrandId { get; set; }
@@ -86,7 +87,6 @@ namespace MOJA.MobileStore.Domain.Entities.Products
 
         public List<Comment>? Comments { get; set; }
         public List<Question>? Questions { get; set; }
-
         //public List<ProductInstance>? ProductInstances { get; set; }
     }
 }

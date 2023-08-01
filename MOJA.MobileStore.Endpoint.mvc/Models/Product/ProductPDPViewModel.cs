@@ -5,6 +5,7 @@ namespace MOJA.MobileStore.Endpoint.mvc.Models.Product
 {
     public class ProductPDPViewModel
     {
+        public int Price { get; set; }
         public string Title { get; set; } = string.Empty;
         public List<string> MobileColors { get; set; } = new();
         public string ProductIntroduction { get; set; } = string.Empty;

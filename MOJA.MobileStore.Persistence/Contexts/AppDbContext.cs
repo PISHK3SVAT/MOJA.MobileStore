@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MOJA.MobileStore.Application.Interfaces.Contexts;
+using MOJA.MobileStore.Domain.Entities.Carts;
 using MOJA.MobileStore.Domain.Entities.Products;
 using MOJA.MobileStore.Domain.Entities.Products.Features;
 using MOJA.MobileStore.Domain.Entities.Users.Customers;
@@ -9,6 +10,9 @@ namespace MOJA.MobileStore.Persistence.Contexts
     public class AppDbContext:DbContext,IAppDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
+
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<MobileColor> Colors { get; set; }
         public DbSet<BackGuardMaterial> BackGuards { get; set; }

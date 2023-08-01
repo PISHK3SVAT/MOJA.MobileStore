@@ -26,7 +26,7 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
                     Image = UriComposer
                                 .ComposeImageUri(db.ProductImages
                                     .FirstOrDefault(pi => pi.ProductId == p.Id)!.PhotoPath),
-                    Price = 16_000_000,
+                    Price = p.SalesPrice,
                 })
                 .ToList();
             return View(products);
@@ -63,6 +63,7 @@ namespace MOJA.MobileStore.Endpoint.mvc.Controllers
             }
             var vm = new ProductPDPViewModel
             {
+                Price=product.SalesPrice,
                 Title = $"گوشی موبایل {product.Brand.Title} مدل {product.Model}",
                 MobileColors=product.MobileColors.Select(c=>c.Title).ToList(),
                 ProductIntroduction=product.ProductIntroduction,

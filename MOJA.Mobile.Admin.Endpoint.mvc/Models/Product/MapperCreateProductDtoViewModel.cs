@@ -8,6 +8,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
         {
             return new CreateProductDto
             {
+                SalesPrice= vm.SalesPrice,
                 BackGuardId = vm.SelectedBackGuard,
                 BatterySpecifications = vm.BatterySpecifications,
                 Bluetooth = vm.Bluetooth,

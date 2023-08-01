@@ -34,6 +34,11 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
             PhotoResolutions = photoResolutions;
             InternalStorages = internalStorages;
         }
+
+        [Display(Name = "قیمت فروش")]
+        [Required(ErrorMessage = "قیمت نباید خالی باشد")]
+        public int SalesPrice { get; set; }
+
         [Display(Name = "رنگ")]
         [Required(ErrorMessage = "رنگ نباید خالی باشد")]
         public List<int> SelectedColors { get; set; } = new();

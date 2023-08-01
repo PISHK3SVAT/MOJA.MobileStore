@@ -17,6 +17,7 @@ namespace MOJA.MobileStore.Application.Services.Products.Commands.CreateProduct
 
             var product = new Product
             {
+                SalesPrice=dto.SalesPrice,
                 BackGuard = db.BackGuards.Find(dto.BackGuardId)!,
                 BatterySpecifications = dto.BatterySpecifications,
                 Bluetooth = dto.Bluetooth,
