@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\MOJA.MobileStore.Endpoint.mvc.bundle.scp.css"
     },
     {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\404.html",
-      "PackagePath": "staticwebassets\\Theme\\404.html"
-    },
-    {
       "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\assets\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\Theme\\assets\\bootstrap\\css\\bootstrap.min.css"
     },
@@ -807,82 +803,6 @@
     {
       "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\assets\\js\\theme.js",
       "PackagePath": "staticwebassets\\Theme\\assets\\js\\theme.js"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\blog-detail.html",
-      "PackagePath": "staticwebassets\\Theme\\blog-detail.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\blog.html",
-      "PackagePath": "staticwebassets\\Theme\\blog.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\cart.html",
-      "PackagePath": "staticwebassets\\Theme\\cart.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\contact-us.html",
-      "PackagePath": "staticwebassets\\Theme\\contact-us.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\login.html",
-      "PackagePath": "staticwebassets\\Theme\\login.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\password-forgot.html",
-      "PackagePath": "staticwebassets\\Theme\\password-forgot.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\password-reset.html",
-      "PackagePath": "staticwebassets\\Theme\\password-reset.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-addresses.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-addresses.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-comments.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-comments.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-favorites.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-favorites.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-my-order-detail.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-my-order-detail.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-my-orders.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-my-orders.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-notification.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-notification.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-personal-info.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-personal-info.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile-user-history.html",
-      "PackagePath": "staticwebassets\\Theme\\profile-user-history.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\profile.html",
-      "PackagePath": "staticwebassets\\Theme\\profile.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\register.html",
-      "PackagePath": "staticwebassets\\Theme\\register.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\single-product--file.html",
-      "PackagePath": "staticwebassets\\Theme\\single-product--file.html"
-    },
-    {
-      "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\Theme\\single-product.html",
-      "PackagePath": "staticwebassets\\Theme\\single-product.html"
     },
     {
       "Id": "H:\\Code\\MOJA.MobileStore\\MOJA.MobileStore.Endpoint.mvc\\wwwroot\\css\\site.css",
