@@ -3,7 +3,7 @@
     public class CustomerAddress
     {
         public long Id { get; set; }
-        public long CustomerId { get; set; }
+        public string CustomerId { get; set; } = string.Empty;
         public Customer Customer { get; set; } = new Customer();
         public string Address { get; set; } = string.Empty;
         public int StateId { get; set; }

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using MOJA.MobileStore.Application.Interfaces.Contexts;
+using MOJA.MobileStore.Application.Services.Carts;
 using MOJA.MobileStore.Domain.Entities.Users;
 using MOJA.MobileStore.Infrastructure.IdentityConfigs;
 using MOJA.MobileStore.Infrastructure.Services.Persons.Commands.CreatePerson;
@@ -51,6 +52,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<ICreateCustomerService, CreateCustomerService>();
 builder.Services.AddScoped<ISignInPersonService, SignInPersonService>();
 builder.Services.AddScoped<ISignOutPersonService, SignOutPersonService>();
+builder.Services.AddScoped<ICartService, CartService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -65,7 +67,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthorization();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

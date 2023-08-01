@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 
+using MOJA.MobileStore.Domain.Entities.Carts;
 using MOJA.MobileStore.Domain.Entities.Products;
 using MOJA.MobileStore.Domain.Entities.Products.Features;
 
@@ -13,6 +14,8 @@ namespace MOJA.MobileStore.Application.Interfaces.Contexts
 {
     public interface IAppDbContext
     {
+        DbSet<Cart> Carts { get; set; }
+        DbSet<CartItem> CartItems { get; set; }
         DbSet<Product> Products { get; set; }
         DbSet<MobileColor> Colors { get; set; }
         DbSet<BackGuardMaterial> BackGuards { get; set; }

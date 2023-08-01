@@ -37,7 +37,7 @@ namespace MOJA.Mobile.Admin.Endpoint.mvc.Models.Product
 
         [Display(Name = "قیمت فروش")]
         [Required(ErrorMessage = "قیمت نباید خالی باشد")]
-        public int SalesPrice { get; set; }
+        public int? SalesPrice { get; set; }
 
         [Display(Name = "رنگ")]
         [Required(ErrorMessage = "رنگ نباید خالی باشد")]

@@ -11,7 +11,23 @@ namespace MOJA.MobileStore.Domain.Entities.Carts
 {
     public class Cart:BaseEntity<long>
     {
-        public long CustomerId { get; set; }
+        public string CustomerId { get; set; } = string.Empty;
         public List<CartItem>? CartItems { get; set; }
+
+
+        public void AddItem(long productId,int count)
+        {
+            if (!CartItems.Any(c=>c.ProductId==productId)) 
+            {
+                CartItems.Add(new CartItem
+                {
+                    ProductId= productId,
+                    Count= count,
+                });
+                return;
+            }
+            var item=CartItems.FirstOrDefault(c=>c.ProductId== productId)!;
+            item.Count+=count;
+        }
     }
 }

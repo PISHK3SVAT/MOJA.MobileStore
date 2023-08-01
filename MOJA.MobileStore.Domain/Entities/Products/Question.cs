@@ -12,7 +12,7 @@ namespace MOJA.MobileStore.Domain.Entities.Products
     public class Question : BaseEntity<long>
     {
         public string Body { get; set; } = string.Empty;
-        public long CustomerId { get; set; }
+        public string CustomerId { get; set; } = string.Empty;
         public Customer Customer { get; set; } = new();
         public long ProductId { get; set; }
         public Product Product { get; set; } = new();

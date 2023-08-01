@@ -15,7 +15,7 @@ namespace MOJA.MobileStore.Domain.Entities.Products
         public string Body { get; set; } = "";
 
         //Both Admin and Customer can answer questions
-        public long PersonId { get; set; }
+        public string PersonId { get; set; } = string.Empty;
         public Person Person { get; set; } = new Person();
 
         public long QuestionId { get; set; }

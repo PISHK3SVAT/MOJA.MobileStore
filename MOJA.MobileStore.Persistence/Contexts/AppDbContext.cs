@@ -41,6 +41,11 @@ namespace MOJA.MobileStore.Persistence.Contexts
                 .HasOne(ca => ca.State)
                 .WithMany(s => s.CustomerAddresses)
                 .OnDelete(DeleteBehavior.NoAction);
+            
+            modelBuilder.Entity<Question>()
+                .HasOne(q => q.Customer)
+                .WithMany(c => c.Questions)
+                .OnDelete(DeleteBehavior.NoAction);
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

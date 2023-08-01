@@ -13,7 +13,7 @@ namespace MOJA.MobileStore.Domain.Entities.Products
     {
         public string? Title { get; set; }
         public string Body { get; set; } = string.Empty;
-        public long CustomerId { get; set; }
+        public string CustomerId { get; set; } = string.Empty;
         public Customer Customer { get; set; } = new Customer();
         public long ProductId { get; set; }
         public Product Product { get; set; } = new Product();
