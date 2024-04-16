@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOJA.MobileStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36de3440be2d4262e5e24482d7b7d729c3a0e16b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOJA.MobileStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOJA.MobileStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
